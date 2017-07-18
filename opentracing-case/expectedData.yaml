@@ -1,0 +1,103 @@
+registryItems:
+  applications:
+  - {open-tracing-case: nq 0}
+  instances:
+  - {open-tracing-case: 1}
+  operationNames:
+  - open-tracing-case: [/opentracing-case/case/open-tracing, OpentracingCase/doGet, OpentracingCase/testContinuation, OpentracingCase/testLocalSpan]
+segmentItems:
+- applicationCode: open-tracing-case
+  segmentSize: 2
+  segments:
+    - segmentId: not null
+      refs: []
+      spans:
+        -
+          operationName: OpentracingCase/testContinuation
+          operationId: eq 0
+          parentSpanId: 2
+          spanId: 3
+          tags: 
+          - {key: name, value: test}
+          logs: []
+          startTime: nq 0
+          endTime: nq 0
+          isError: false
+          spanLayer: null
+          spanType: Local
+          componentName: null
+          componentId: eq 0
+          peer: null
+          peerId: eq 0
+        -
+          operationName: OpentracingCase/testLocalSpan
+          operationId: eq 0
+          parentSpanId: 1
+          spanId: 2
+          tags:
+          - {key: name, value: Test}
+          logs: []
+          startTime: nq 0
+          endTime: nq 0
+          spanLayer: null
+          isError: false
+          spanType: Local
+          componentName: OpentracingService
+          componentId: eq 0
+          peer: null
+          peerId: eq 0
+        -
+          operationName: OpentracingCase/doGet
+          operationId: eq 0
+          parentSpanId: 0
+          spanId: 1
+          startTime: nq 0
+          endTime: nq 0
+          isError: false
+          spanLayer: null
+          spanType: Local
+          componentName: null
+          componentId: eq 0
+          tags: []
+          logs: []
+          peer: null
+          peerId: eq 0
+        -
+          operationName: /opentracing-case/case/open-tracing
+          operationId: eq 0
+          parentSpanId: -1
+          spanId: 0
+          startTime: nq 0
+          endTime: nq 0
+          spanLayer: Http
+          isError: false
+          spanType: Entry
+          componentName: null
+          componentId: 1
+          tags:
+            - {key: url, value: 'http://localhost:18080/opentracing-case/case/open-tracing'}
+            - {key: http.method, value: GET}
+          logs: []
+          peer: null
+          peerId: eq 0
+      
+    - segmentId: not null
+      refs: 
+        - {spanId: 3, parentSegmentId: "${open-tracing-case[0]}", entryServiceName: "/opentracing-case/case/open-tracing", networkAddress: "" }
+      spans:
+        -
+          operationName: OpentracingCase/run
+          operationId: eq 0
+          parentSpanId: -1
+          spanId: 0
+          tags: []
+          logs: []
+          startTime: nq 0
+          endTime: nq 0
+          spanLayer: null
+          isError: false
+          spanType: Local
+          componentName: null
+          componentId: eq 0
+          peer: null
+          peerId: eq 0
