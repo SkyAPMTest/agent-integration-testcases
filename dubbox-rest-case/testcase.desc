@@ -1,0 +1,3 @@
+case.name=dubbox-rest-case
+case.components=dubbox-2.8.4,tomcat-8.0.45
+case.request_url=http://localhost:18080/dubbox-case/case/dubbox-rest
