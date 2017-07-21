@@ -33,6 +33,6 @@ services:
       - "12800:12800"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://127.0.0.1:12800/receiveData"]
-      interval: 10s
+      interval: 5s
       timeout: 10s
       retries: 5
