@@ -30,7 +30,7 @@ services:
     expose:
       - "20880"
     volumes:
-     - /Users/xin/workbench/ascrutae/test-project/agent:/usr/local/dubbox-provider/agent
+     - {AGENT_FILE_PATH}:/usr/local/dubbox-provider/agent
     links:
       - zk-server
       - mock-collector
