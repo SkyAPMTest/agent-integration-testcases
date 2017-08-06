@@ -83,7 +83,7 @@ segmentItems:
       
     - segmentId: not null
       refs: 
-        - {spanId: 3, parentSegmentId: "${open-tracing-case[0]}", entryServiceName: "/opentracing-case/case/open-tracing", networkAddress: "" }
+        - {parentSpanId: 3, parentTraceSegmentId: "${open-tracing-case[0]}", entryServiceName: "/opentracing-case/case/open-tracing", networkAddress: "",parentServiceName: "/opentracing-case/case/open-tracing" }
       spans:
         -
           operationName: OpentracingCase/run
