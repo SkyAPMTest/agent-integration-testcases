@@ -56,7 +56,7 @@ segmentItems:
   segments:      
     - segmentId: not null
       refs: 
-        - {parentSpanId: 1, parentTraceSegmentId: "${dubbox-consumer[0]}", entryServiceName: "/dubbox-case/case/dubbox-rest", networkAddress: not null, parentServiceName: "/dubbox-case/case/dubbox-rest",refType: not null }
+        - {parentSpanId: 1, parentTraceSegmentId: "${dubbox-consumer[0]}", entryServiceName: "/dubbox-case/case/dubbox-rest", networkAddress: not null, parentServiceName: "/dubbox-case/case/dubbox-rest",refType: not null,entryApplicationInstanceId: nq 0 }
       spans:
         -
           operationName: org.skywaking.apm.testcase.dubbo.services.GreetService.doBusiness()
