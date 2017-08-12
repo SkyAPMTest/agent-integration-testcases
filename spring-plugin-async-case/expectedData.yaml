@@ -1,0 +1,234 @@
+registryItems:
+  applications:
+  - {spring-case:      nq 0}
+  instances:
+  - {spring-case:      1}
+  operationNames:
+  - spring-case:       [/rest/, 'future/get:/rest/1', /rest/, 'future/failureCallback:/rest/1', '/rest/{id}', /async, 'future/get:/rest/', 'future/successCallback:/rest/1',/rest/1]
+segmentItems:
+- applicationCode:     spring-case
+  segmentSize:         6
+  segments:
+    - segmentId:       not null
+      refs:            []
+      spans:
+      - operationName: /rest/1
+        operationId:   0
+        parentSpanId:  0
+        spanId:        1
+        spanLayer:     Http
+        tags:
+          - {key: url, value: 'http://localhost:8080/rest/1'}
+          - {key: http.method, value: GET}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   13
+        componentName: ''
+        isError:       false
+        spanType:      Exit
+        peer:          localhost:8080
+        peerId:        0
+      - operationName: /async
+        operationId:   0
+        parentSpanId:  -1
+        spanId:        0
+        spanLayer:     Http
+        tags:
+          - {key: url, value: 'http://localhost:8080/async'}
+          - {key: http.method, value: GET}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   14
+        componentName: ''
+        isError:       false
+        spanType:      Entry
+        peer:          ''
+        peerId:        0
+    - segmentId:       not null
+      refs:
+        - {parentServiceId: 0, parentServiceName: /async, networkAddressId: 0, entryServiceId: 0,refType: CrossThread, parentSpanId: 1, parentTraceSegmentId: '${spring-case[0]}',parentApplicationInstanceId: 0, networkAddress: '', entryServiceName: /async, }
+        - {parentServiceId: 0, parentServiceName: 'future/failureCallback:/rest/1', networkAddressId: 0, entryServiceId: 0, refType: CrossThread, parentSpanId: 3, parentTraceSegmentId: '${spring-case[1]}', parentApplicationInstanceId: 0, networkAddress: '', entryServiceName: /async}
+      spans:
+      - operationName: /rest/
+        operationId:   0
+        parentSpanId:  0
+        spanId:        1
+        spanLayer:     Http
+        tags:
+          - {key: url, value: 'http://localhost:8080/rest/'}
+          - {key: http.method, value: POST}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   13
+        componentName: ''
+        isError:       false
+        spanType:      Exit
+        peer:          localhost:8080
+        peerId:        0
+      - operationName: future/get:/rest/
+        operationId:   0
+        parentSpanId:  0
+        spanId:        2
+        spanLayer:     not null
+        tags:          []
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   0
+        componentName: ''
+        isError:       false
+        spanType:      Local
+        peer:          ''
+        peerId:        0
+      - operationName: /rest/1
+        operationId:   0
+        parentSpanId:  0
+        spanId:        3
+        spanLayer:     Http
+        tags:
+          - {key: url, value: 'http://localhost:8080/rest/1'}
+          - {key: http.method, value: PUT}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   13
+        componentName: ''
+        isError:       false
+        spanType:      Exit
+        peer:          localhost:8080
+        peerId:        0
+      - operationName: /rest/1
+        operationId:   0
+        parentSpanId:  4
+        spanId:        5
+        spanLayer:     Http
+        tags:
+          - {key: url, value: 'http://localhost:8080/rest/1'}
+          - {key: http.method, value: DELETE}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   13
+        componentName: ''
+        isError:       false
+        spanType:      Exit
+        peer:          localhost:8080
+        peerId:        0
+      - operationName: future/get:/rest/1
+        operationId:   0
+        parentSpanId:  4
+        spanId:        6
+        spanLayer:     not null
+        tags:          []
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   0
+        componentName: ''
+        isError:       false
+        spanType:      Local
+        peer:          ''
+        peerId:        0
+      - operationName: future/successCallback:/rest/1
+        operationId:   0
+        parentSpanId:  0
+        spanId:        4
+        spanLayer:     not null
+        tags:
+          - {key: url, value: /rest/1}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   13
+        componentName: ''
+        isError:       false
+        spanType:      Local
+        peer:          ''
+        peerId:        0
+      - operationName: future/failureCallback:/rest/1
+        operationId:   0
+        parentSpanId:  -1
+        spanId:        0
+        spanLayer:     not null
+        tags:
+          - {key: url, value: /rest/1}
+        logs:
+        - logEvent:
+          - {key: event, value: error}
+          - {key: error.kind, value: org.springframework.web.client.HttpClientErrorException}
+          - {key: message, value: not null}
+          - {key: stack, value: not null}
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   13
+        componentName: ''
+        isError:       false
+        spanType:      Local
+        peer:          ''
+        peerId:        0
+    - segmentId:       not null
+      refs:
+        - {parentServiceId: 0, parentServiceName: /async, networkAddressId: 0, entryServiceId: 0, refType: CrossProcess, parentSpanId: 1, parentTraceSegmentId: '${spring-case[0]}',parentApplicationInstanceId: nq 0, networkAddress: 'localhost:8080', entryServiceName: /async, entryApplicationInstanceId: nq 0}
+      spans:
+      - operationName: /rest/{id}
+        operationId:   eq 0
+        parentSpanId:  -1
+        spanId:        0
+        tags:
+          - {key: "url", value: "http://localhost:8080/rest/1"}
+          - {key: "http.method", value: "GET"}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        spanLayer:     Http
+        isError:       false
+        spanType:      Entry
+        componentName: null
+        componentId:   14
+        peer:          ''
+        peerId:        eq 0
+    - segmentId:       not null
+      refs:
+        - {parentServiceId: 0, parentServiceName: 'future/failureCallback:/rest/1', networkAddressId: 0,entryServiceId: 0, refType: CrossProcess, parentSpanId: 5, parentTraceSegmentId: '${spring-case[1]}', networkAddress: 'localhost:8080', entryServiceName: /async}
+      spans:
+      - perationName:  /rest/{id}
+        operationId:   0
+        parentSpanId:  -1
+        spanId:        0
+        spanLayer:     Http
+        tags:
+          - {key: url, value: 'http://localhost:8080/rest/1'}
+          - {key: http.method, value: DELETE}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   14
+        componentName: ''
+        isError:       false
+        spanType:      Entry
+        peer:          ''
+        peerId:        0
+    - segmentId:       not null
+      refs:
+        - {parentServiceId: 0, parentServiceName: 'future/failureCallback:/rest/1', networkAddressId: 0, entryServiceId: 0, refType: CrossProcess, parentSpanId: 3, parentTraceSegmentId: '${spring-case[1]}', parentApplicationInstanceId: 1, networkAddress: 'localhost:8080', entryServiceName: /async, entryApplicationInstanceId: 1}
+      spans:
+      - operationName: /rest/{id}
+        operationId:   0
+        parentSpanId:  -1
+        spanId:        0
+        spanLayer:     Http
+        tags:
+          - {key: url, value: 'http://localhost:8080/rest/1'}
+          - {key: http.method, value: PUT}
+        logs:          []
+        startTime:     nq 0
+        endTime:       nq 0
+        componentId:   14
+        componentName: ''
+        isError:       false
+        spanType:      Entry
+        peer:          ''
+        peerId:        0
