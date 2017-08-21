@@ -1,3 +1,3 @@
-case.name=trace-activation-case
+case.name=@trace-case
 case.components=spring-mvc-4.3.8,trace-activation
 case.request_url=http://localhost:18080/trace-activation-case/trace-activation
