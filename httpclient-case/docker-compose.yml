@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   async-testcase:
-    image: skywalking/httpclient-scenario:1.0-2017
+    image: skywalking/httpclient-scenario:1.1-2017
     expose:
       - "18080"
     ports:
