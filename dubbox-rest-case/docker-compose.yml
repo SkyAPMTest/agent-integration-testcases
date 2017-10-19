@@ -4,7 +4,7 @@ services:
     image: zookeeper:3.4.10
 
   dubbox-consumer:
-    image: skywalking/dubbox-consumer-scenario:1.1-2017
+    image: skywalking/dubbox-consumer-scenario:3.2.3-2017
     expose:
       - "18080"
     ports:
@@ -23,7 +23,7 @@ services:
         condition: service_healthy
 
   dubbox-provider:
-    image: skywalking/dubbox-provider-scenario:1.1-2017
+    image: skywalking/dubbox-provider-scenario:3.2.3-2017
     environment:
       - COLLECTOR_SERVER=mock-collector:12800
       - ZK_ADDRESS=zk-server:2181
