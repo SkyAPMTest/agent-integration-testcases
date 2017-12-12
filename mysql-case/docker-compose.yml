@@ -14,7 +14,7 @@ services:
       retries: 5
 
   mysql-testcase:
-    image: skywalking/mysql-scenario:3.2.3-2017
+    image: skywalking/mysql-scenario:3.2.6-2017
     expose:
       - "18080"
     ports:
@@ -32,7 +32,7 @@ services:
       - mysql-server
 
   mock-collector:
-    image: skywalking/skywalking-mock-collector:1.0-2017
+    image: skywalking/skywalking-mock-collector:3.2.6-2017
     environment:
       - GRPC_BIND_HOST=mock-collector
     expose:
