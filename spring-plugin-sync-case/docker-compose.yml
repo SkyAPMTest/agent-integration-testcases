@@ -19,7 +19,7 @@ services:
         condition:    service_healthy
 
   mock-collector:
-    image:            skywalking/skywalking-mock-collector:1.0-2017
+    image:            skywalking/skywalking-mock-collector:3.2.6-2017
     environment:
       - GRPC_BIND_HOST=mock-collector
     expose:
