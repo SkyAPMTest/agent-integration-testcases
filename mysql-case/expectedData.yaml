@@ -10,7 +10,6 @@ segmentItems:
   segmentSize: 1
   segments:
     - segmentId: not null
-      refs: []
       spans:
         -
           operationName: Mysql/JDBI/PreparedStatement/execute

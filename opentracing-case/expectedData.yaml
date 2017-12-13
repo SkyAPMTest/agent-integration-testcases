@@ -10,7 +10,6 @@ segmentItems:
   segmentSize: 2
   segments:
     - segmentId: not null
-      refs: []
       spans:
         -
           operationName: OpentracingCase/testContinuation
@@ -82,8 +81,6 @@ segmentItems:
           peerId: eq 0
       
     - segmentId: not null
-      refs: 
-        - {parentSpanId: 3, parentTraceSegmentId: "${open-tracing-case[0]}", entryServiceName: "/opentracing-case/case/open-tracing", networkAddress: "",parentServiceName: "/opentracing-case/case/open-tracing",entryApplicationInstanceId: nq 0 }
       spans:
         -
           operationName: OpentracingCase/run
@@ -101,3 +98,5 @@ segmentItems:
           componentId: eq 0
           peer: null
           peerId: eq 0
+          refs: 
+            - {parentSpanId: 3, parentTraceSegmentId: "${open-tracing-case[0]}", entryServiceName: "/opentracing-case/case/open-tracing", networkAddress: "",parentServiceName: "/opentracing-case/case/open-tracing",entryApplicationInstanceId: nq 0 }

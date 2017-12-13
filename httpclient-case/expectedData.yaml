@@ -10,7 +10,6 @@ segmentItems:
   segmentSize: 2
   segments:
     - segmentId: not null
-      refs: []
       spans:
         -
           operationName: /httpclient-case/case/context-propagate
@@ -50,8 +49,6 @@ segmentItems:
           peerId: eq 0
       
     - segmentId: not null
-      refs: 
-        - {parentSpanId: 1, parentTraceSegmentId: "${httpclient-case[0]}", entryServiceName: "/httpclient-case/case/httpclient", networkAddress: "127.0.0.1:8080",parentServiceName: "/httpclient-case/case/httpclient",entryApplicationInstanceId: nq 0 }
       spans:
         -
           operationName: /httpclient-case/case/context-propagate
@@ -71,3 +68,5 @@ segmentItems:
           componentId: 1
           peer: null
           peerId: eq 0
+          refs: 
+            - {parentSpanId: 1, parentTraceSegmentId: "${httpclient-case[0]}", entryServiceName: "/httpclient-case/case/httpclient", networkAddress: "127.0.0.1:8080",parentServiceName: "/httpclient-case/case/httpclient",entryApplicationInstanceId: nq 0 }
